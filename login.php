@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +21,11 @@
         <input type="password" id="password" name="password">
         <br><br>
         <input type="submit" value="Submit">
+            <?php if (isset($_SESSION['failed_attempt'])): ?>
+                <p>Failed attempt: <?= $_SESSION['failed_attempt']; ?></p>
+            <?php endif; ?>
     </form>
 </body>
+
+
 </html>
